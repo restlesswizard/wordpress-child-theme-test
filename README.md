@@ -13,6 +13,7 @@
 
 ## Структура проекта
 
+```text
 twentytwentyone-child
 ├── assets
 │   ├── css
@@ -34,7 +35,7 @@ twentytwentyone-child
 ├── style.css
 └── template-parts
     └── content-project.php
-
+```
 ---
 
 ## Описание файлов и папок
