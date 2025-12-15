@@ -1,0 +1,291 @@
+/*
+Theme Name: Twenty Twenty-One Child
+Theme URI: http://example.com/twenty-twenty-one-child
+Description: Дочерняя тема для Twenty Twenty-One
+Author: Твоё имя
+Author URI: http://example.com
+Template: twentytwentyone
+Version: 1.0.0
+Text Domain: twentytwentyone-child
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+:root {
+    /*
+    * Основные величины
+    */
+
+    /* Ширина контейнера */
+    --container: 1440px;
+
+    /* Ориентир отступа */
+    --padding-threshold: 1rem;
+
+    /* Расчёт сокращенных отступов для ссылок и пр. */
+    --padding-shorten: calc(var(--padding-threshold) / 2) var(--padding-threshold) calc(var(--padding-threshold) / 2) var(--padding-threshold);
+
+    /* Общее скругление */
+    --border-radius: .8rem;
+
+    /* Высота миниатюр для сетки проектов */
+    --projects-page-thumbnail-height: 272px;
+
+
+    /*
+    * Косметика
+    */
+
+    /* Фон для описания проекта */
+    --project-bg: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    /* Размытие фона описания проекта */
+    --project-bg-blur: blur(4px);
+
+    /* Цвета категорий */
+    --project-cat_layout: rgb(53, 148, 180);
+    --project-cat_development: rgb(224, 228, 5);
+    --project-cat_design: rgb(176 66 189);
+    --project-cat_marketing: rgb(66 189 149);
+    
+    /* Общий бордер */
+    --border-common: 1px solid #0000002e;
+
+    /* Общая тень */
+    --shadow-common: 0 2px 4px 2px #00000020;
+}
+
+body h1 {
+    font-size: 3rem;
+}
+
+.container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding: 0 var(--padding-threshold);
+}
+
+section {
+    padding-top: var(--padding-threshold);
+    padding-bottom: var(--padding-threshold);
+}
+
+.project-cat__item.layout a {
+    background-color: var(--project-cat_layout);
+}
+
+.project-cat__item.development a {
+    background-color: var(--project-cat_development);
+    color: black
+}
+
+.project-cat__item.design a {
+    background-color: var(--project-cat_design);
+}
+
+.project-cat__item.marketing a {
+    background-color: var(--project-cat_marketing)
+}
+
+.project-info {
+    padding: 16px;
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.project-info__title {
+    text-align: center;
+}
+
+.project-info__content {
+    font-size: 1rem;
+}
+
+.project-info__content p:not(:first-child) {
+    margin-top: 16px;
+}
+
+.project-info__card {
+    padding: 16px;
+    background: var(--project-bg);
+    backdrop-filter: var(--project-bg-blur);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: var(--border-radius);
+}
+
+.project-meta__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-meta__heading {
+    font-size: 1rem;
+}
+
+.project-meta__data {
+    font-size: 1.2rem;
+}
+
+.project-desc-add__body {
+    font-size: 1rem;
+}
+
+.project-desc-add__body ul {
+    padding-left: 32px;
+}
+
+.project-filter__body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 16px;
+    text-align: right;
+}
+
+.project-filter__body label {
+    margin-bottom: 0;
+}
+
+/* Embla */
+.embla {
+    position: relative;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.embla__viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.embla__container {
+    display: flex;
+    gap: 20px;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    position: relative;
+    border: var(--border-common);
+    border-radius: var(--border-radius);
+}
+
+.embla__prev {
+    left: 10px;
+}
+
+.embla__next {
+    right: 10px;
+}
+
+.embla__slide-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.embla__prev,
+.embla__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+    padding: 0;
+}
+
+.embla__prev:hover,
+.embla__next:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.embla__prev svg,
+.embla__next svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* single-project */
+.project-cat {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.project-cat__item a {
+    color: #fff;
+    text-decoration: none;
+    padding: var(--padding-shorten);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.projects-grid__layout {
+    display: grid;
+    gap: 16px;
+}
+
+.projects-grid__layout img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    height: var(--projects-page-thumbnail-height);
+}
+
+#projects-sort {
+    padding: var(--padding-shorten);
+}
+
+.project-card__info {
+    padding: var(--padding-threshold);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-card {
+    border-radius: var(--border-radius);
+    background-color: aliceblue;
+    box-shadow: var(--shadow-common);
+}
+
+.project-card__thumbnail img {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.project-card__permalink {
+    text-decoration: none;
+}
+
+.project-grid__top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
